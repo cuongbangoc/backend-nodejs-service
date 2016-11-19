@@ -1,0 +1,40 @@
+version: "2"
+
+services:
+    api:
+        container_name: api
+        build: ./
+        environment:
+            PROJECT_NAME: api
+            NODE_ENV: dev_docker_local
+        # volumes:
+        #     - .:/build
+        ports:
+            - '5000:5000'
+        command: "pm2 start -x --no-daemon app.js"
+        depends_on:
+            - postgresql
+        networks:
+            - front-net
+            - back-net
+
+    postgresql:
+        image: postgres:alpine
+        container_name: postgresql
+        environment:
+            POSTGRES_USER: demo
+            POSTGRES_PASSWORD: demo123456
+            POSTGRES_DB: demo
+            NODE_ENV: dev
+        ports:
+            - '5432:5432'
+        # volumes:
+        #     - "./docker/docker_data/postgresql:/var/lib/postgresql/data"
+        #     - "/usr/share/zoneinfo:/usr/share/zoneinfo"
+        #     - "./sql/init_db_demo.sql:/sql/init_db_demo.sql"
+        networks:
+            - back-net
+
+networks:
+    front-net:
+    back-net:

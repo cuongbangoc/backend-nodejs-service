@@ -1,0 +1,23 @@
+{
+    "server": {
+        "host": "0.0.0.0",
+        "port": 5000
+    },
+    "logs": {
+        "level": "debug",
+        "handleExceptions": false
+    },
+    "unauthorization": [
+        "/swagger"
+    ],
+    "token_expire": 86400,
+    "time_format": "YYYY-MM-DD H:mm:ss:SSS",
+    "postgresql": {
+        "host": "postgresql",
+        "port": 5432,
+        "user": "demo",
+        "password": "demo123456",
+        "database": "demo",
+        "pool_max": 10
+    }
+}

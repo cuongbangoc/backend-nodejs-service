@@ -28,10 +28,10 @@ services:
             NODE_ENV: dev
         ports:
             - '5432:5432'
-        # volumes:
-        #     - "./docker/docker_data/postgresql:/var/lib/postgresql/data"
-        #     - "/usr/share/zoneinfo:/usr/share/zoneinfo"
-        #     - "./sql/init_db_demo.sql:/sql/init_db_demo.sql"
+        volumes:
+            - "./docker/docker_data/postgresql:/var/lib/postgresql/data"
+            - "/usr/share/zoneinfo:/usr/share/zoneinfo"
+            - "./sql/init_db_demo.sql:/sql/init_db_demo.sql"
         networks:
             - back-net
 

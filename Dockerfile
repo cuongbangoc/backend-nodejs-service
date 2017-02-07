@@ -1,13 +1,14 @@
 FROM node:alpine
 MAINTAINER Cuong Ba
 
-RUN node -v
-RUN npm -v
+RUN node -v && npm -v
 RUN npm install -g pm2
 
 WORKDIR /build
-COPY ./ /build/
 
+ADD ./package.json /build
 RUN npm install
+
+ADD ./ /build
 
 EXPOSE 5000

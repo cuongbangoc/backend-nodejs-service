@@ -76,6 +76,7 @@ router.get("/hello", function(req, res) {
     var name = req.query.name;
 
     res.status(200).json({
+        error_code: 0,
         status: "success",
         message: "Hello " + name
     });

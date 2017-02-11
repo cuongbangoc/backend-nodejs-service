@@ -1,7 +1,7 @@
 var express = require('express'),
     logger = require('../helpers/logger'),
     router = express.Router(),
-    md_demo = require("../models/md_demo"),
+    demo_repo = require("../repositories/demo_repository"),
     q = require("q");
 
 /**
@@ -32,13 +32,14 @@ var express = require('express'),
  */
 
 router.get("/demo_db", function(req, res) {
-    var data_res = md_demo.get_demo();
-    data_res.then(function(result){
+    var data_res = demo_repo.findAll();
+
+    data_res.then(function(rows){
         res.status(200).json({
             error_code: 0,
             message: "Get Demo API SUCCESS",
-            data: result.rows,
-            count: result.rowCount
+            data: rows,
+            count: rows.rowCount
         });
     }).catch(function(err){
         logger.error(err);

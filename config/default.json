@@ -12,12 +12,29 @@
     ],
     "token_expire": 86400,
     "time_format": "YYYY-MM-DD H:mm:ss:SSS",
-    "postgresql": {
-        "host": "localhost",
-        "port": 5432,
+    "db": {
+        "database": "demo",
         "user": "demo",
         "password": "demo123456",
-        "database": "demo",
-        "pool_max": 10
-    }
+        "options": {
+            "host": "192.168.1.190",
+            "port": 5432,
+            "dialect": "postgres",
+            "pool": {
+                "maxConnections": 10,
+                "minConnections": 0,
+                "maxIdleTime": 10000
+            },
+            "logging": false, //disable logging; default: console.log
+            "maxConcurrentQueries": 50, // default: 50
+            "define": {
+                "timestamps": false,
+                "underscored": false,
+                "charset": "utf8",
+                "collate": "utf8_general_ci",
+                "freezeTableName": true, // disable the modification of tablenames
+            }
+        }
+    },
+    "salt_factor": 10
 }

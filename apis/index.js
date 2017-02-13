@@ -11,5 +11,6 @@ router.use(function(req, res, next) {
 });
 
 router.use('/api/v1/demo', require('./demo'));
+router.use('/api/v1/users', require('./users_api'));
 
 module.exports = router;

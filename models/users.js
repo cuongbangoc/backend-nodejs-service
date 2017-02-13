@@ -7,7 +7,7 @@ module.exports = function (sequelize, DataTypes) {
             unique: true
         },
         u_email: {
-            type: DataTypes.STRING(255),
+            type: DataTypes.STRING,
             allowNull: false,
             unique: true,
             validate: {
@@ -15,15 +15,15 @@ module.exports = function (sequelize, DataTypes) {
             }
         },
         u_password: {
-            type: DataTypes.STRING(255),
+            type: DataTypes.STRING,
             allowNull: false
         },
         u_salt: {
-            type: DataTypes.STRING(255),
+            type: DataTypes.STRING,
             allowNull: false
         },
-        u_first_name: DataTypes.STRING(255),
-        u_last_name: DataTypes.STRING(255),
+        u_first_name: DataTypes.STRING,
+        u_last_name: DataTypes.STRING,
         u_type: DataTypes.INTEGER,
         u_is_active: DataTypes.INTEGER
     }, {

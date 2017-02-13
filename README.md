@@ -47,3 +47,8 @@ sudo docker exec -it postgresql psql -U demo -d demo -a -f /sql/init_db_demo.sql
 ```
 
 3) Access to API at http://localhost:5000
+
+
+http://blog.slatepeak.com/refactoring-a-basic-authenticated-api-with-node-express-and-mongo/
+https://blog.hyphe.me/token-based-authentication-with-node/
+https://blog.hyphe.me/using-refresh-tokens-for-permanent-user-sessions-in-node/

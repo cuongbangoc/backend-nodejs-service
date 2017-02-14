@@ -36,5 +36,9 @@
             }
         }
     },
-    "salt_factor": 10
+    "salt_factor": 10,
+    "jwt": {
+        "jwt_secret": "helloworld",
+        "expired_at": 10080
+    }
 }

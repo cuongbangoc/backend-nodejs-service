@@ -29,8 +29,6 @@ router.post("/login", function(req, res) {
 
 router.post("/register", function(req, res) {
     // Check for registration errors
-    console.log(req.body);
-
     const email = req.body.email;
     const firstName = req.body.first_name;
     const lastName = req.body.last_name;
@@ -71,11 +69,16 @@ router.post("/register", function(req, res) {
                 u_password: hash,
                 u_salt: salt,
                 u_type: type
-            }).then(function(result){
-                if(result){
+            }).then(function(user){
+                if(user){
+                    user = helper.normalize_user(user.dataValues);
+                    let access_token = helper.generate_token(user, config.get("jwt.jwt_secret"), config.get("jwt.expired_at"));
+
                     return res.status(200).send({
                         error_code: 0,
-                        message: 'Register is success.'
+                        message: 'Register is success.',
+                        user: user,
+                        access_token: access_token
                     });
                 }
             }).catch(function(err){

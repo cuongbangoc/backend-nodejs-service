@@ -11,6 +11,13 @@ var UserRepository = {
             }
         });
     },
+    findById: function(id){
+        return models.users.find({
+            where: {
+                u_id: id
+            }
+        });
+    },
     create: function(user){
         console.log(user);
         return models.users.create(user);

@@ -21,6 +21,10 @@ paths:
       description: |
         Hello API
       parameters:
+        - name: token
+          in: header
+          type: string
+          description: token key
         - name: name
           in: query
           description: Name which to say hello

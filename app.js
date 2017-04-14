@@ -18,9 +18,9 @@ app.set('port', process.env.PORT || config.get("server.port"));
 //
 // Use helmet to secure Express headers
 // Don't allow me to be in ANY frames:
-app.use(helmet.frameguard({
-    action: 'deny'
-}));
+// app.use(helmet.frameguard({
+//     action: 'deny'
+// }));
 
 // Only let me be framed by people of the same origin:
 app.use(helmet.frameguard({
@@ -29,10 +29,10 @@ app.use(helmet.frameguard({
 app.use(helmet.frameguard()); // defaults to sameorigin
 
 // Allow from a specific host:
-app.use(helmet.frameguard({
-    action: 'allow-from',
-    domain: 'http://example.com'
-}));
+// app.use(helmet.frameguard({
+//     action: 'allow-from',
+//     domain: 'http://example.com'
+// }));
 app.use(helmet.xssFilter());
 app.use(helmet.noSniff());
 app.use(helmet.ieNoOpen());

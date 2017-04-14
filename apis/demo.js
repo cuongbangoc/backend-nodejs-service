@@ -77,7 +77,7 @@ router.get("/demo_db", function(req, res) {
 
 router.get("/hello", function(req, res) {
     var name = req.query.name;
-
+    // console.log(req.headers);
     res.status(200).json({
         error_code: 0,
         status: "success",

@@ -1,3 +1,5 @@
+'use strict';
+
 // Importing Passport, strategies, and config
 const passport = require('passport'),
       user_repo = require('../repositories/user_repository'),

@@ -1,3 +1,5 @@
+'use strict';
+
 var express = require('express'),
     logger = require('../helpers/logger'),
     router = express.Router(),

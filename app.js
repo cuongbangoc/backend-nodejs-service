@@ -63,7 +63,8 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
 // import middlewares
-app.use(require('./middlewares/auth'));
+// app.use(require('./middlewares/auth'));
+// app.all('/api/v1/users*', [require('./middlewares/auth')]);
 
 // import routers
 app.use(require('./apis'));

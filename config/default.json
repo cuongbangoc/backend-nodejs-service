@@ -39,6 +39,6 @@
     "salt_factor": 10,
     "jwt": {
         "jwt_secret": "helloworld",
-        "expired_at": 10080
+        "expired_at": 86400
     }
 }

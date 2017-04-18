@@ -13,6 +13,9 @@ router.use(function(req, res, next) {
 });
 
 router.use('/api/v1/demo', require('./demo'));
+router.use('/api/v1/auth', require('./auth_api'));
+
+router.all('/api/v1/users*', [require('../middlewares/auth')]);
 router.use('/api/v1/users', require('./users_api'));
 
 module.exports = router;

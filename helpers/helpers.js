@@ -2,7 +2,7 @@
 
 const bcrypt = require('bcrypt-nodejs');
 const jwt = require("jsonwebtoken");
-
+const moment = require("moment");
 var config = require("config");
 
 function hash_password(password, salt){
@@ -34,10 +34,20 @@ function normalize_user(user){
     return user;
 }
 
+function create_expires_date() {
+    var time = config.get("jwt.expired_at");
+    var today = moment.utc();
+    var expires_at = moment(today).add(time, 'hours').format(config.get('time_format'));
+
+    return expires_at;
+}
+
+
 module.exports = {
     get_salt: get_salt,
     hash_password: hash_password,
     compare_password: compare_password,
     generate_token: generate_token,
-    normalize_user: normalize_user
+    normalize_user: normalize_user,
+    create_expires_date: create_expires_date
 }

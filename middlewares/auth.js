@@ -4,9 +4,10 @@ var config = require('config');
 var logger = require('../helpers/logger');
 var moment = require('moment');
 
-var app = require("../app");
+// var app = require("../app");
 
 module.exports = function(req, res, next) {
+    return res.status(401).json({});
     // Authentication
     var access_token = req.query.access_token;
     access_token = access_token;

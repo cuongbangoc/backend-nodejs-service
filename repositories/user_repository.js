@@ -21,7 +21,6 @@ var UserRepository = {
         });
     },
     create: function(user){
-        console.log(user);
         return models.users.create(user);
     }
 }

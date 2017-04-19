@@ -16,7 +16,7 @@ router.get("/", function(req, res) {
     data_res.then(function(rows){
         res.status(200).json({
             error_code: 0,
-            message: "Get Demo API SUCCESS",
+            message: "Get Users API SUCCESS",
             data: rows,
             count: rows.rowCount
         });
@@ -24,7 +24,7 @@ router.get("/", function(req, res) {
         logger.error(err);
         res.status(500).json({
             error_code: 6,
-            message: "Get Demo API ERROR",
+            message: "Get Users API ERROR",
             data: null
         });
     });

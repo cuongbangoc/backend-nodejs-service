@@ -10,6 +10,7 @@ var config = require("config");
 let helper = require("../helpers/helpers");
 
 router.get("/", function(req, res) {
+    var current_user = req.app.get("current_user");
     var data_res = user_repo.findAll();
 
     data_res.then(function(rows){

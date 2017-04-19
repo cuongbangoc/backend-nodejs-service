@@ -2,7 +2,9 @@ node_modules
 *.sw*
 
 # Logs
-logs
+# logs
+logs/*.log
+logs/*.log.*
 *.log
 npm-debug.log*
 

@@ -144,3 +144,28 @@ paths:
           description: Server Internal error
       tags:
         - Auth
+
+  /users:
+    get:
+      summary: Get all Users APi
+      description: |
+        Get all users API
+      parameters:
+        - name: x-access-token
+          in: header
+          description: json header data to login
+          required: true
+          type: string
+      responses:
+        '200':
+          description: OK
+        '400':
+          description: Bad Request
+        '401':
+          description: Unauthorized
+        '406':
+          description: Not Acceptable
+        '500':
+          description: Server Internal error
+      tags:
+        - Auth

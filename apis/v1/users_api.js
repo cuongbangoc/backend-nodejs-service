@@ -1,13 +1,13 @@
 'use strict';
 
 var express = require('express'),
-    logger = require('../helpers/logger'),
+    logger = require('../../helpers/logger'),
     router = express.Router(),
-    user_repo = require("../repositories/user_repository"),
+    user_repo = require("../../repositories/user_repository"),
     q = require("q");
 
 var config = require("config");
-let helper = require("../helpers/helpers");
+let helper = require("../../helpers/helpers");
 
 router.get("/", function(req, res) {
     var current_user = req.app.get("current_user");

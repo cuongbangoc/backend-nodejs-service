@@ -1,14 +1,14 @@
 'use strict';
 
 var express = require('express'),
-    logger = require('../helpers/logger'),
+    logger = require('../../helpers/logger'),
     router = express.Router(),
-    user_repo = require("../repositories/user_repository"),
-    token_repo = require("../repositories/token_repository"),
+    user_repo = require("../../repositories/user_repository"),
+    token_repo = require("../../repositories/token_repository"),
     q = require("q");
 
 var config = require("config");
-let helper = require("../helpers/helpers");
+let helper = require("../../helpers/helpers");
 
 router.post("/login", function(req, res) {
     let email = req.body.email;

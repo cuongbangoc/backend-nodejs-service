@@ -1,9 +1,9 @@
 'use strict';
 
 var express = require('express'),
-    logger = require('../helpers/logger'),
+    logger = require('../../helpers/logger'),
     router = express.Router(),
-    demo_repo = require("../repositories/demo_repository"),
+    demo_repo = require("../../repositories/demo_repository"),
     q = require("q");
 
 /**

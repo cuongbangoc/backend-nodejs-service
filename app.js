@@ -49,8 +49,8 @@ app.all('/*', function(req, res, next) {
 });
 
 // add-on swagger-editor
-app.use('/swagger', express.static('./node_modules/swagger-editor'));
-// app.use('/', express.static('./docs'));
+app.use('/swagger-editor', express.static('./node_modules/swagger-editor'));
+app.use('/swagger', express.static('./docs'));
 app.get('/docs', function(req, res){
     var docs = yaml.safeLoad(fs.readFileSync('./docs/swagger.yml', 'utf8'));
     res.send(JSON.stringify(docs));
@@ -64,7 +64,6 @@ app.use(bodyParser.json());
 
 // import middlewares
 // app.use(require('./middlewares/auth'));
-// app.all('/api/v1/users*', [require('./middlewares/auth')]);
 
 // import routers
 app.use(require('./apis'));
